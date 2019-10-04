@@ -1,0 +1,32 @@
+/// http://nayeemmollickjoy.blogspot.com/2017/07/1136-division-by-3-lightoj-problem-full.html
+/// It is very helpful
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int div(int n) {
+    
+    if (n==0) {
+        return 0;
+    }
+    int ans = (n / 3) * 2;
+    if (n % 3 == 2)
+
+    {
+        ans=ans+1;
+    }
+    return ans;
+}
+
+int main()
+{
+    int t,a,b,k=1;
+    cin>>t;
+    while(t--)
+    {
+        cin>>a>>b;
+        cout<<"Case"<<" "<<k++<<":"<<" "<<div(b)-div(a-1)<<endl;
+    }
+}
+
+/// Happy coding
