@@ -1,0 +1,54 @@
+/// http://shoshikkha.com/archives/3487
+/// use the concept of this blog
+/// remember that for negative number the loop will started from the index 1 of the string 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+
+{
+    int T,rem;
+    cin>>T;
+    string s;
+    long long int b,sum,k,j;
+    for(int i=1;i<=T;i++)
+
+    {
+        cin>>s>>b;
+
+        int l=s.size();
+
+        if(s[0]=='-')
+        {
+            j=1;
+        }
+
+        else
+        {
+            j=0;
+        }
+        if(b<0)
+        {
+            b=b*(-1);
+        }
+         sum=0;
+         int count=0;
+         for(k=j;k<l;k++)
+         {
+             sum=(s[k]-'0')+sum*10;
+             sum=sum%b;
+         }
+         if(sum)
+         {
+             printf("Case %d: not divisible\n",i);
+         }
+          else
+             printf("Case %d: divisible\n",i);
+         }
+
+         return 0;
+    }
+
+
+/// Happy coding
