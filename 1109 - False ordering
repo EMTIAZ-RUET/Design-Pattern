@@ -1,0 +1,56 @@
+/// A simple tecnique to sort the value . you can use bool function,structure...... 
+/// use squre root to find the divisor and use c++ stl pair for more efficient.....
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+pair<int,int>value[1010];
+
+/// for sorting according to the problem
+bool cheak(const pair<int,int> &a,
+              const pair<int,int> &b)
+{
+    if(a.first==b.first)return a.second>b.second;
+    return a.first<b.first;
+}
+
+
+void storevalue()
+{
+    int i,k=0,cnt,j;
+    for(i=1; i<=1000; i++)
+    {
+        cnt=0;
+        for(j=1; j*j<=i; j++)
+        {
+            if(i%j== 0)
+            {
+                cnt++;
+                if(i/j!=j)
+                    cnt++;
+            }
+        }
+        value[k].first=cnt;
+        value[k].second=i;
+        k++;
+    }
+    sort(value,value+k,cheak);
+
+}
+
+int main()
+{
+    storevalue();
+    int t,n,k=1;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        cout<<"Case"<<" "<<k++<<":"<<" "<<value[n-1].second<<endl;
+    }
+}
+
+
+/// happy coding
